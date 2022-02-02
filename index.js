@@ -16,6 +16,9 @@ app.on('message', (msg) => {
 });
 
 app.on('voiceStateUpdate', (oldState, newState)=>{
-	console.log(newState);
+	newState.join().then(connection => {
+		const dispatcher = connection.play('entrou.mp3');
+		dispatcher.on('finish', () => { newState.leave() });
+	});
 })
 app.login('OTM4MzQxNTE4Nzk0NzAyODk4.Yfo4ow.qUc5jS8oKYeEKFBT6GAUA1hCuhg');
