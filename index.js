@@ -19,7 +19,7 @@ app.on('voiceStateUpdate', (oldState, newState)=>{
 	if(newState.channel){
 		newState.channel.join().then(connection => {
 			const dispatcher = connection.play('entrou.mp3');
-			dispatcher.on('finish', () => { newState.leave() });
+			dispatcher.on('finish', () => { newState.channel.leave() });
 		});
 	}
 })
