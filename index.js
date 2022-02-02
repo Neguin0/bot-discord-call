@@ -6,7 +6,8 @@ app.on('ready', () => {
 });
 
 app.on('message', (msg) => {
-	if (msg.content === 'join' && msg.member.voice.channel && !msg.author.bot){
+	if (msg.content === 'test' && msg.member.voice.channel && !msg.author.bot){
+		console.log(msg.member.voice.channel);
 		msg.member.voice.channel.join().then(connection => {
 			const dispatcher = connection.play('entrou.mp3');
 			dispatcher.on('finish', () => { msg.member.voice.channel.leave() });
