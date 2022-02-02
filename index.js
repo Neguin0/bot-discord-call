@@ -1,5 +1,14 @@
 const Discord = require('discord.js');
 const app = new Discord.Client();
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000
+app.get('/', (req, res) =>{
+	res.send("Bot dos cria!");
+});
+app.listen(port, ()=>{
+	console.log('Server Online!');
+});
 
 app.on('ready', () => {
       console.log('Estou Online!!');
