@@ -22,4 +22,4 @@ app.on('voiceStateUpdate', async(oldState, newState) => {
 		});
 	}
 })
-app.login('OTM4MzQxNTE4Nzk0NzAyODk4.Yfo4ow.qUc5jS8oKYeEKFBT6GAUA1hCuhg');
+app.login('SEU_TOKEN');
